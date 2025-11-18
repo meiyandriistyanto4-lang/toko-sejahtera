@@ -1,0 +1,351 @@
+/* ===============================
+   THEME VARIABLES
+=============================== */
+:root{
+    --bg:#f6f7fb;
+    --text:#1e293b;
+    --muted:#64748b;
+    --accent:#3b82f6;
+    --accent-light:#93c5fd;
+    --dark:#0f172a;
+}
+
+/* DARK THEME */
+body.dark{
+    --bg:#0f172a;
+    --text:#e2e8f0;
+    --muted:#94a3b8;
+    --accent:#60a5fa;
+    --accent-light:#3b82f6;
+}
+
+/* ===============================
+   RESET & BASE
+=============================== */
+*{
+    margin:0; 
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    transition:background .3s ease, color .3s ease;
+}
+
+/* ===============================
+   GLOBAL BACKGROUND PHOTO
+=============================== */
+body {
+    background:url("ltwarung.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Overlay agar teks tetap jelas */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.32);
+    z-index: 0;
+    pointer-events: none;
+}
+
+body.dark::before {
+    background: rgba(0,0,0,0.55);
+}
+
+/* Semua konten berada di atas overlay */
+header,
+section,
+footer,
+#loading-screen,
+.wa-float {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile optimize */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ===============================
+   HEADER
+=============================== */
+header{
+    background:var(--dark);
+    padding:18px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:20;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+
+header .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    font-size:20px;
+    font-weight:600;
+}
+
+header nav{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+header nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    transition:0.25s;
+}
+
+header nav a:hover{
+    color:var(--accent-light);
+    transform:translateY(-1px);
+}
+
+/* ===============================
+   TOGGLE DARK MODE
+=============================== */
+.toggle-container{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-left:12px;
+}
+
+.icon-sun, .icon-moon{
+    font-size:18px;
+    line-height:0;
+}
+
+.switch{
+    position:relative;
+    width:46px;
+    height:22px;
+}
+
+.switch input{ display:none; }
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#cbd5e1;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    height:18px;
+    width:18px;
+    left:2px;
+    bottom:2px;
+    background:white;
+    border-radius:50%;
+    transition:.3s;
+}
+
+input:checked + .slider{
+    background:var(--accent);
+}
+
+input:checked + .slider:before{
+    transform:translateX(24px);
+}
+
+/* ===============================
+   PAGE SECTION
+=============================== */
+section{
+    padding:70px 7%;
+}
+
+.hero {
+    padding: 120px 20px;
+    text-align:center;
+    margin-bottom:40px;
+    animation:fadeIn 0.6s ease;
+    background: url("assets/ltwarung.jpg") center/cover no-repeat;
+    border-radius: 18px;
+    box-shadow:0 8px 26px rgba(0,0,0,0.15);
+    color:white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    border-radius: inherit;
+}
+
+body.dark .hero::before {
+    background: rgba(0,0,0,0.65);
+}
+
+.hero * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:white;
+}
+
+.hero p {
+    font-size:17px;
+    color:#f1f5f9;
+}
+
+/* ===============================
+   CARD
+=============================== */
+.card{
+    background:#ffffff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom:25px;
+    transition:0.25s;
+    animation:fadeInUp .6s ease;
+}
+
+body.dark .card{
+    background:#1e293b;
+    color:#e2e8f0;
+    box-shadow:0 6px 22px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 28px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:28px;
+    margin-top:50px;
+    font-size:14px;
+}
+
+/* ===============================
+   LOADING SCREEN
+=============================== */
+#loading-screen{
+    position:fixed;
+    inset:0;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    transition:opacity .4s ease;
+}
+
+.pulse-loader{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:var(--accent-light);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:pulse 1.4s infinite;
+}
+
+.loader-logo{
+    width:55px;
+    height:55px;
+    border-radius:14px;
+}
+
+@keyframes pulse{
+    0% { transform:scale(1); box-shadow:0 0 0 0 rgba(59,130,246,0.5); }
+    70% { transform:scale(1.07); box-shadow:0 0 0 25px rgba(59,130,246,0); }
+    100% { transform:scale(1); box-shadow:0 0 0 0 rgba(59,130,246,0); }
+}
+
+/* ===============================
+   ANIMATIONS
+=============================== */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes fadeInUp{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* DARK MODE */
+body.dark .chat.left{
+    background:#1e293b;
+    color:#e2e8f0;
+}
+
+body.dark .chat.right{
+    background:#3b82f6;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Colors */
+.wa { background: #25D366; }
+.ig { background: #E1306C; }
+.gm { background: #EA4335; }
+
+/* Hover */
+.contact-btn:hover {
+    transform: scale(1.15);
+    opacity: .9;
+}

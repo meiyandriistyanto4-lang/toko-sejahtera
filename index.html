@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Beranda</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div id="loading-screen">
+    <div class="pulse-loader">
+        <img src="assets/logomi.png" class="loader-logo">
+    </div>
+</div>
+
+<header>
+    <div class="logo">
+        <img src="assets/logomi.png" width="40" style="border-radius:10px;">
+        <span>Toko Sejahtera</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="about.html">Tentang</a>
+        <a href="kebijakan.html">Kebijakan</a>
+        <a href="kontak.html">Kontak</a>
+
+        <!-- 🌙 DARK MODE TOGGLE -->
+        <div class="toggle-container">
+            <span class="icon-sun">🌞</span>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+            <span class="icon-moon">🌙</span>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Selamat Datang di Toko Sejahtera</h1>
+    <p>Pusatnya produk kebutuhan harian lengkap, harga terjangkau, dan pelayanan cepat.</p>
+</section>
+
+<section>
+    <div class="card">
+        <h2>Detail informasi Toko</h2>
+        <p><b>Nama Toko:</b> Toko Sejahtera</p>
+        <p><b>Alamat:</b> Jl. Kp.Cilegok RT 041 RW 004, Desa Sukarame, Kec. Sukarame, Kab. Tasikmalaya, 46461</p>
+        <p><b>No. Telepon:</b> 0821-2793-0080</p>
+        <p><b>Email:</b> tamrinismayanti@gmail.com</p>
+        <p><b>Jam Operasional:</b> 07:00 - 21:00 WIB</p>
+    </div>
+
+    <!-- ================================
+         TAMBAHAN LAYANAN (BARU DITAMBAHKAN)
+    ================================= -->
+    <div class="card" style="margin-top:20px;">
+        <h2>Melayani :</h2>
+        <ul style="line-height:1.8; padding-left:18px; margin:0;">
+            <li>Tarik tunai via transfer bank / e-wallet</li>
+            <li>Top up saldo apapun (DANA, OVO, GoPay, ShopeePay, Pulsa, dll.)</li>
+            <li>Bayar (Listrik, Token, PDAM, BPJS, dll.)</li>
+        </ul>
+    </div>
+    <!-- END TAMBAHAN LAYANAN -->
+
+<!-- ============================
+     FLOATING WHATSAPP BUTTON
+============================= -->
+<a href="https://wa.me/6282127930080?text=Halo%20saya%20ingin%20memesan%20barang"
+   class="wa-float"
+   style="
+        position:fixed;
+        bottom:25px;
+        right:25px;
+        background:#25D366;
+        color:white;
+        padding:14px 20px;
+        border-radius:50px;
+        font-size:17px;
+        font-weight:600;
+        box-shadow:0 8px 20px rgba(0,0,0,0.25);
+        text-decoration:none;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        z-index:999;
+   ">
+    <span>💬</span> Pesan Sekarang
+</a>
+
+</section>
+
+<footer>
+    © 2025 Toko Sejahtera — Semua Hak Dilindungi
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
